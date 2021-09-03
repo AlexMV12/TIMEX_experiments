@@ -1,0 +1,32 @@
+{
+  "activity_title": "Google Analysis",
+  "verbose": "INFO",
+  "input_parameters": {
+    "source_data_url": "../../Stocks.csv",
+    "columns_to_load_from_url": "Date,GOOG",
+    "datetime_column_name": "Date",
+    "index_column_name": "Date",
+    "frequency": "D"
+  },
+  "selection_parameters": {
+    "init_datetime": "2020-01-01",
+    "end_datetime": "2021-01-01"
+  },
+  "model_parameters": {
+    "test_values": 10,
+    "delta_training_percentage": 10,
+    "prediction_lags": 10,
+    "possible_transformations" : "none,log_modified",
+    "models": "fbprophet,lstm,arima,exponentialsmoothing",
+    "main_accuracy_estimator": "mae"
+  },
+  "historical_prediction_parameters": {
+    "initial_index": "2020-09-30",
+    "save_path": "historical_predictions.pkl",
+    "delta": 3
+  },
+  "visualization_parameters": {
+    "xcorr_graph_threshold": 0.8,
+    "box_plot_frequency": "1W"
+  }
+}
